@@ -53,7 +53,11 @@ class PostResource extends Resource
 
                 Forms\Components\Card::make()
                 ->schema([
-                Forms\Components\FileUpload::make('thumbnail'),
+                Forms\Components\FileUpload::make('thumbnail')->image()
+                ->imageResizeMode('cover')
+    ->imageCropAspectRatio('16:9')
+    ->imageResizeTargetWidth('1920')
+    ->imageResizeTargetHeight('1080'),
 
                 Forms\Components\Select::make('category_id')->multiple()
                     ->relationship('categories', 'title')
@@ -69,13 +73,11 @@ class PostResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\ImageColumn::make('thumbnail'),
-                Tables\Columns\TextColumn::make('title'),  
+                Tables\Columns\TextColumn::make('title'),
                 Tables\Columns\IconColumn::make('active')
                     ->boolean(),
-                // Tables\Columns\TextColumn::make('user.name'),
-                Tables\Columns\TextColumn::make('category.title')
-                    ->label('Category'),
-                Tables\Columns\TextColumn::make('published_at'),
+                Tables\Columns\TextColumn::make('published_at')
+                    ->dateTime(),
                 Tables\Columns\TextColumn::make('updated_at')
                     ->dateTime(),
             ])
