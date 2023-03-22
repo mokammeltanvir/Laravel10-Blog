@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-app-layout meta-title="MokammelTanvir's Blog" meta-description="MokammelTanvir's personal blog about Programming and Technology">
   <!-- Post Section -->
   <section class="w-full md:w-2/3 flex flex-col items-center px-3">
 

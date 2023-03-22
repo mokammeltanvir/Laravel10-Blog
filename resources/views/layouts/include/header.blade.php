@@ -5,9 +5,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Mokammel Tanvir Blog</title>
-  <meta name="author" content="Mokammel Tanvir">
-  <meta name="description" content="">
+  <title>{{ $metaTitle ?: 'Mokammel Tanvir Blog' }}</title>
+  <meta name="author" content="MokammelTanvir">
+  <meta name="description" content="{{ $metaDescription }}">
 
   <!-- Tailwind -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">

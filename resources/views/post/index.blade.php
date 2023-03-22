@@ -1,4 +1,4 @@
-<x-app-layout meta-description="MokammelTanvir's personal blog about Programming and Technology">
+<x-app-layout :meta-title="'Mokammel Tanvir Blog - Post by Category '. $category->title" meta-description="MokammelTanvir's personal blog about Programming and Technology">
 <!-- Posts Section -->
 <section class="w-full md:w-2/3 flex flex-col items-center px-3">
 
