@@ -16,7 +16,7 @@
         </p>
         <a href="{{ route('view', $post) }}" class="pb-6">
             {{ $post->shortBody() }}</a>
-        <a href="#" class="uppercase text-gray-800 hover:text-black">Continue Reading <i
+        <a href="{{ route('view', $post) }}" class="uppercase text-gray-800 hover:text-black">Continue Reading <i
                 class="fas fa-arrow-right"></i></a>
     </div>
 </article>

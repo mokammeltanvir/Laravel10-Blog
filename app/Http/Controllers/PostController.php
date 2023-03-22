@@ -16,27 +16,13 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::query()->where('active', '=', 1)
+        $posts = Post::query()
+        ->where('active', '=', 1)
         ->whereDate('published_at', '<', Carbon::now())
-        ->orderBy('published_at', 'DESC')
-        ->paginate(3);
+        ->orderBy('published_at', 'desc')
+        ->paginate(5);
+
         return view('home', compact('posts'));
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
     }
 
     /**
@@ -47,17 +33,17 @@ class PostController extends Controller
         if(!$post->active || $post->published_at > Carbon::now()) {
             throw new NotFoundHttpException();
         }
-
-        $next = Post::query()->where('active', '=', 1)
+        $next = Post::query()
+        ->where('active', '=', 1)
         ->whereDate('published_at', '<=', Carbon::now())
-        ->where('published_at', '<', $post->published_at)
+        ->whereDate('published_at', '<', $post->published_at)
         ->orderBy('published_at', 'Desc')
         ->limit(1)
         ->first();
 
         $previous = Post::query()->where('active', '=', 1)
         ->whereDate('published_at', '<=', Carbon::now())
-        ->where('published_at', '>', $post->published_at)
+        ->whereDate('published_at', '>', $post->published_at)
         ->orderBy('published_at', 'Asc')
         ->limit(1)
         ->first();
