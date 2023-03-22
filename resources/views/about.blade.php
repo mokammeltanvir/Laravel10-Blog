@@ -24,16 +24,16 @@
         <p class="font-semibold text-2xl">Mokammel Tanvir</p>
         <p class="pt-2">Full-Stack Web Developer with over 5 years of experience in the industry.</p>
         <div class="flex items-center justify-center md:justify-start text-2xl no-underline text-blue-800 pt-4">
-          <a class="" href="#">
+          <a class="" target="_blank" href="https://facebook.com/mokammeltanvir.me">
             <i class="fab fa-facebook"></i>
           </a>
-          <a class="pl-4" href="#">
+          <a class="pl-4" target="_blank" href="https://instagram.com/mokammeltanvir.me">
             <i class="fab fa-instagram"></i>
           </a>
-          <a class="pl-4" href="#">
+          <a class="pl-4" target="_blank" href="https://twitter.com/mokammeltanvir">
             <i class="fab fa-twitter"></i>
           </a>
-          <a class="pl-4" href="#">
+          <a class="pl-4" target="_blank" href="https://www.linkedin.com/in/mokammeltanvir/">
             <i class="fab fa-linkedin"></i>
           </a>
         </div>
