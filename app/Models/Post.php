@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\User;
 use App\Models\Category;
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -25,11 +26,24 @@ class Post extends Model
 
     function user(): BelongsTo
     {
-        return $this->belongsTo(related: User::class);
+        return $this->belongsTo(User::class);
     }
 
     function categories(): BelongsToMany
     {
-        return $this->belongsToMany(related: Category::class);
+        return $this->belongsToMany(Category::class);
+    }
+
+    function shortBody()
+    {
+        return Str::words(strip_tags($this->body), 30, '...');
+    }
+
+    function getThumbnail()
+    {
+        if(str_starts_with($this->thumbnail, 'http')) {
+            return $this->thumbnail;
+        }
+        return asset('storage/' . $this->thumbnail);
     }
 }

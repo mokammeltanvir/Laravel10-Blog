@@ -56,8 +56,8 @@ class PostResource extends Resource
                 Forms\Components\FileUpload::make('thumbnail')->image()
                 ->imageResizeMode('cover')
     ->imageCropAspectRatio('16:9')
-    ->imageResizeTargetWidth('1920')
-    ->imageResizeTargetHeight('1080'),
+    ->imageResizeTargetWidth('1000')
+    ->imageResizeTargetHeight('500'),
 
                 Forms\Components\Select::make('category_id')->multiple()
                     ->relationship('categories', 'title')
