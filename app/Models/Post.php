@@ -19,9 +19,12 @@ class Post extends Model
         'slug',
         'thumbnail',
         'body',
+        'user_id',
         'active',
         'published_at',
-        'user_id',
+    ];
+    protected $casts = [
+        'published_at' => 'datetime'
     ];
 
     function user(): BelongsTo
@@ -37,6 +40,11 @@ class Post extends Model
     function shortBody()
     {
         return Str::words(strip_tags($this->body), 30, '...');
+    }
+
+    public function getFormattedDate()
+    {
+        return $this->published_at->format('F jS Y');
     }
 
     function getThumbnail()

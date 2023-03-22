@@ -12,7 +12,7 @@
                 Mokammel Tanvir's Blog
             </a>
             <p class="text-lg text-gray-600">
-                Lorem Ipsum Dolor Sit Amet
+                {{ \App\Models\TextWidget::getTitle('header-subtitle') }}
             </p>
         </div>
     </header>
@@ -25,12 +25,7 @@
     <div class="container mx-auto flex flex-wrap py-6">
 
         <!-- Posts Section -->
-        {{ $slot }}
-
-<!-- Sidebar Section -->
-@include('layouts.include.sidebar')
-
-
+        {{ $slot }} 
     </div>
 
 @include('layouts.include.footer')

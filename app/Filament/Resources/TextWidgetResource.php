@@ -34,7 +34,7 @@ class TextWidgetResource extends Resource
                 Forms\Components\TextInput::make('title')
                     ->required()
                     ->maxLength(2048),
-                Forms\Components\Textarea::make('content')
+                Forms\Components\RichEditor::make('content')
                     ->maxLength(65535),
                 Forms\Components\Toggle::make('active')
                     ->required(),
