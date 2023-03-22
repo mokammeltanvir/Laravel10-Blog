@@ -6,8 +6,8 @@
         <ul class="list-reset">
             @foreach ($categories as $category)
             <li class="py-2">
-                <a href="{{ route('by-category', $category) }}"
-                    class="text-gray-800 font-bold hover:text-blue-600">{{ $category->title }}({{ $category->total }})</a>
+                <a href="{{route('by-category', $category)}}" class="text-semibold block py-2 px-3 hover:bg-blue-600 hover:text-white rounded {{ request('category')?->slug === $category->slug
+                                ? 'bg-blue-600 text-white' :  ''}}">{{ $category->title }}({{ $category->total }})</a>
             </li>
             @endforeach
            
